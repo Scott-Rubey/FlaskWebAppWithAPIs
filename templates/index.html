@@ -1,0 +1,26 @@
+<!--HTML file for the main index page.
+    Contains a 'submit' link where users may submit
+    info pertaining to dive shops; also provides a means for
+    viewing records currently retained in the database-->
+
+{% extends "layout.html" %}
+{% block content %}
+    <h2>Dive Shop Resources</h2>
+
+    <h3>Add shop <a href="{{ url_for('submit') }}">here</a></h3>
+    <h3>Dive shops</h3>
+    {% for entry in entries %}
+        <p class=entry>
+	Name: {{ entry.name }} <br>
+	Phone: {{ entry.phone }} <br>
+	Address: {{ entry.address }} <br>
+	Website: {{ entry.website }} <br>
+	Classes: {{ entry.classes }} <br>
+	<a href="https://google.com/maps/search/?api={{apiKey}}&q={{entry.lat}},{{entry.lng}}" target="_blank">Map</a>
+	<br>
+	<a href="{{ entry.yelpURL }}" target="_blank">Yelp</a>
+        </p>
+    {% endfor %}
+
+{% endblock %}
+

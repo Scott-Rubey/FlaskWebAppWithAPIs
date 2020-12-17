@@ -1,0 +1,20 @@
+<!--Specifies HTML elements of the page in which visitors
+    may add dive shops to the DB.  Users may add the
+    name of the shop, the phone number, the address, 
+    the website, and whether or not the shop offers classes-->
+
+{% extends "layout.html" %}
+{% block content %}
+    <h2><center>Enter new dive shop</center></h2>
+    <form action="{{ url_for('submit') }}" method=post>
+	<fieldset>
+	<p class="heading">Name:<br><input type=text name=name>
+	<p class="heading">Phone:<br><input type=text name=phone>
+	<p class="heading">Address:<br><input type=text name=address>
+	<p class="heading">Website:<br><input type=text name=website>
+	<p class="heading">Offers classes (yes/no):<br><input type=text name=classes>
+	<p><input type=submit value=Submit></p>
+	</fieldset>
+    </form>
+{% endblock %}
+

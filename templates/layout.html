@@ -1,0 +1,11 @@
+<!--HTML file that specifies the css stylesheet-->
+
+<!doctype html>
+<html>
+<title>Dive Shop Resources</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<div class=page>
+    {% block content %}{% endblock %}
+</div>
+</html>
+
